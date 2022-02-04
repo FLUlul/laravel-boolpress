@@ -4,6 +4,7 @@
 @auth
 <h2>Welcome {{Auth::user() -> name}}</h2>
 <a href="{{route('logout')}}" class="btn btn-secondary">Logout</a>
+<a href="{{route('posts')}}" class="btn btn-primary">Posts</a>
 
 @else
     <h2>Login or Register</h2>

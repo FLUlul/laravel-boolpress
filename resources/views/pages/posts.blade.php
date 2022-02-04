@@ -1,6 +1,6 @@
 @extends('layouts.main-layout')
 @section('content')
-<a href="{{route('logout')}}" class="btn btn-secondary">Logout</a><br><br>
+<a href="{{route('home')}}" class="btn btn-secondary">Home</a><br><br>
 <a href="{{route('create')}}" class="btn btn-primary">Create</a>
 
     <h1>Posts list:</h1>

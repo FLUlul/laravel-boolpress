@@ -39,4 +39,19 @@ class HomeController extends Controller
 
         return view('pages.create');
     }
+    public function store(Request $request) {
+
+        $data = $request -> validate([
+            'title' => 'required|string|max:50',
+            'author' => 'required|string|max:50',
+            'subtitle' => 'nullable|string|max:100',
+            'content' => 'required|string|max:255',
+            'publish_date' => 'required|date',
+            'likes' => 'required|numeric|min:0'
+        ]);
+
+        Post::create($data);
+
+        return redirect() -> route('posts');
+    }
 }

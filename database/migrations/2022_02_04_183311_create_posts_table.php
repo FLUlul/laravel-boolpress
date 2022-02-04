@@ -21,7 +21,7 @@ class CreatePostsTable extends Migration
             $table->string('subtitle')->nullable();
             $table->text('content');
             $table->date('publish_date');
-            $table->bigInteger('likes');
+            $table->bigInteger('likes')->default(0)->unsigned();
 
             $table->timestamps();
         });
