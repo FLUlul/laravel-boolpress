@@ -10968,3 +10968,21 @@ body {
   text-align: center;
 }
 
+.post {
+  border-radius: 20px;
+  border: solid 1px #000000;
+  width: 40%;
+  margin: 20px auto;
+  background-color: #E5E5E5;
+  color: #000000;
+}
+
+.post .date-auth {
+  display: flex;
+  justify-content: space-around;
+}
+
+.post .likes {
+  color: #FCA311;
+}
+

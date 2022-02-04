@@ -13,6 +13,11 @@ Oltre alle rotte di autenticazione che già conoscete (/login, /logout, /registe
 
 Route::get('/', 'GuestController@home')->name('home');
 
+Route::get('/posts', 'HomeController@posts')->name('posts');
+
+Route::get('/posts/create', 'HomeController@create')->name('create');
+
+
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::post('/login', 'Auth\LoginController@login')->name('login');
 Route::post('/register', 'Auth\RegisterController@register')->name('register');
