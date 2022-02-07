@@ -11,7 +11,6 @@ $factory->define(Post::class, function (Faker $faker) {
         'author' => $faker -> name(),
         'subtitle' => $faker -> words(3, true),
         'content' => $faker -> text(200),
-        'publish_date' => $faker -> date(),
         'likes' => $faker -> randomNumber(5, false),
     ];
 });

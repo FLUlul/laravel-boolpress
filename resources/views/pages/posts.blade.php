@@ -11,7 +11,7 @@
             <h4>{{$post -> subtitle}}</h4>
             <p>{{$post -> content}}</p>
             <div class="date-auth">
-                <div>{{$post -> publish_date}}</div>
+                <div>{{$post -> created_at}}</div>
                 <div>{{$post -> author}}</div>
             </div>
             <div>Likes: <span class="likes">{{$post -> likes}}</span></div>
