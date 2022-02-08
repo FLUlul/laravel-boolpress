@@ -11,7 +11,6 @@ class Post extends Model
         'author',
         'subtitle',
         'content',
-        'publish_date',
         'likes',
     ];
 

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Post;
+use App\Category;
 
 class HomeController extends Controller
 {
@@ -24,7 +25,9 @@ class HomeController extends Controller
 
     public function create() {
 
-        return view('pages.create');
+        $categories = Category::all();
+
+        return view('pages.create', compact('categories'));
     }
     public function store(Request $request) {
 
@@ -36,7 +39,11 @@ class HomeController extends Controller
 
         $data['author'] = Auth::user() -> name;
 
-        Post::create($data);
+        $post = Post::make($data);
+        $category = Category::findOrFail($request -> get('category'));
+
+        $post ->category() -> associate($category);
+        $post ->save();
 
         return redirect() -> route('posts');
     }

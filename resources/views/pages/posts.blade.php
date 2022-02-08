@@ -11,9 +11,10 @@
             <h4>{{$post -> subtitle}}</h4>
             <p>{{$post -> content}}</p>
             <div class="date-auth">
-                <div>{{$post -> created_at}}</div>
+                <div>{{$post -> created_at -> format('d/m/Y H:m')}}</div>
                 <div>{{$post -> author}}</div>
             </div>
+            <div>Category: {{$post -> category -> type}}</div>
             <div>Likes: <span class="likes">{{$post -> likes}}</span></div>
         </div>
     @endforeach
