@@ -10986,3 +10986,8 @@ body {
   color: #FCA311;
 }
 
+.post .tags {
+  color: #FCA311;
+  cursor: pointer;
+}
+

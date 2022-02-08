@@ -13,13 +13,20 @@
         <input type="text" name="subtitle"><br><br>
         <label for="content">Content</label><br>
         <textarea name="content" cols="30" rows="10"></textarea><br><br>
+        <label for="category">Category</label>
         <select name="category">
             @foreach ($categories as $category)
                 <option value="{{$category -> id}}">{{$category -> type}}</option>
             @endforeach
         </select><br><br>
 
-        <input type="submit" value="Create">
+        <label for="tags">Tags</label><br>
+        @foreach ($tags as $tag)
+        <input type="checkbox" name="tags[]" value="{{$tag -> id}}">{{$tag -> type}}<br>
+        @endforeach
 
+
+
+        <br><input type="submit" value="Create"><br><br>
     </form>
 @endsection

@@ -10,11 +10,27 @@
             <h2>{{$post -> title}}</h2>
             <h4>{{$post -> subtitle}}</h4>
             <p>{{$post -> content}}</p>
+
             <div class="date-auth">
-                <div>{{$post -> created_at -> format('d/m/Y H:m')}}</div>
+                <div>{{$post -> created_at -> format('d/m/Y H:i')}}</div>
                 <div>{{$post -> author}}</div>
             </div>
-            <div>Category: {{$post -> category -> type}}</div>
+
+            <div class="date-auth">
+                <div>Category: {{$post -> category -> type}}</div>
+
+                <div>
+                    @if (count($post -> tags))
+                        Tags:
+                        @foreach ($post -> tags as $tag)
+                            
+                            - <a class="tags">{{$tag -> type}}</a> -
+
+                        @endforeach
+                    @endif
+                </div>
+            </div>
+            
             <div>Likes: <span class="likes">{{$post -> likes}}</span></div>
         </div>
     @endforeach
