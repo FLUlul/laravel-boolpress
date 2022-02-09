@@ -32,6 +32,9 @@
             </div>
             
             <div>Likes: <span class="likes">{{$post -> likes}}</span></div>
+
+            <br><a href="{{route ('edit', $post -> id)}}" class="btn btn-secondary">Edit</a><br>
+            <br><a href="{{route ('delete', $post -> id)}}" class="btn btn-danger">Delete</a><br><br>
         </div>
     @endforeach
 
